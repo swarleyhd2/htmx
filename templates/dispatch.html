@@ -1,0 +1,33 @@
+<div class="reservations">
+    <div class="pending-assignment">
+        <h2>Pending Assignment</h2>
+    </div>
+    <div class="pending-pickups">
+        <h2>Pending Pickups</h2>
+    </div>
+    <div class="map" id="map" style="height: 800px; width: 800px;">
+        <script>
+        let map;
+        function initMap() {
+            map = new google.maps.Map(document.getElementById("map"), {
+                center: {
+                    lat:-34.397,
+                    lng: 150.644
+                },
+                zoom: 8
+            });
+        }
+        </script>
+    </div>
+    <div class="pending-delivery">
+        <h2>Delivery Schedule</h2>
+    </div>
+    <div class="on-rent">
+        <h2>On Rent</h2>
+    </div>
+</div>
+
+<div>
+
+</div>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA0v1MRmfM3XWTT5M_OpqP_A6z06vDEm7M&callback=initMap"></script>
