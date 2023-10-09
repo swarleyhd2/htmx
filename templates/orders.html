@@ -1,3 +1,63 @@
 <div>
-    Check it out
+    <h1>New Order</h1>
+        <form>
+            <label for="customer">Customer</label>
+            <input type='select' name="customer"></input>
+            <button>+ Customer</button>
+            <label for="start-date">Start Date</label>
+            <input type='date' name="start-date"></input>
+            <label for="end-date">End Date</label>
+            <input type='date' name="end-date"></input>
+            <div>
+                <h2>Shipping Details</h2>
+                <label for="shipping">Shipping To</label>
+                <input type='select' name="shipping"></input>
+                <button>+ Shipping Address</button>
+            </div>
+            <div>
+                <h2>Contact</h2>
+
+            </div>
+            <div>
+                <h2>Equipment Type</h2>
+                <label for="equipment-type">Equipment Type</label>
+                <input type='select' name="equipment-type"></input>
+                <label for="quantity">Quantity</label>
+                <input placeholder="quantity" name="quantity"></input>
+                <h2>Rates</h2>
+                <label for="day-rate">Day</label>
+                <input placeholder='Day' name="day-rate" required></input>
+                <label for="day-rate">Week</label>
+                <input placeholder='Week' name="week-rate" required></input>
+                <label for="day-rate">4 Week</label>
+                <input placeholder='4 Week' name="4week-rate" required></input>
+            </div>
+            <div>+ Add Another Unit</div>
+            <div>
+                <h2>Delivery</h2>
+                <label for="trucking-delivery">Delivery</label>
+                <input for="trucking-delivery" type='text' placeholder='Delivery'></input>
+                <label for="trucking-return">Return</label>
+                <input for="trucking-return" type='text' placeholder='Return'></input>
+            </div>
+            <div>
+                <h2>Options</h2>
+                <label for="environmental">Environmental Fee</label>
+                <input type='text' placeholder='Environmental Fee' name="environmental"></input>
+                <label for="fuel"></label>
+                <input name="fuel" type='text' placeholder='Fuel'></input>
+                <label for="other">Other</label>
+                <input name="other" type='text' placeholder='Other'></input>
+                <div>
+                    <input type='checkbox' name='damage-waiver'></input>
+                    <label for='damage-waiver'>Damage Waiver 15%</label>
+                </div>
+                <div>
+                    <input type='checkbox' name='tax-exempt'></input>
+                    <label for='tax-exempt'>Tax Exempt</label>
+                </div>
+            </div>
+            <input type='text' placeholder='Delivery Instructions'></input>
+            <button>Submit</button>
+        </form>
 </div>

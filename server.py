@@ -26,7 +26,7 @@ def signOut():
 def dispatch():
     return render_template('dispatch.html')
 
-@app.route('/neworder', methods=['GET', 'POST'])
+@app.route('/createorder', methods=['GET', 'POST'])
 def orders():
     return render_template('orders.html')
 
