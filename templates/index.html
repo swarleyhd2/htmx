@@ -4,16 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://unpkg.com/htmx.org@1.9.6" integrity="sha384-FhXw7b6AlE/jyjlZH5iHa/tTe9EpJ1Y55RjcgPbjeWMskSxZt1v9qkxLJWNJaGni" crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap.min.css') }}"> <script src="../js/bootstrap.min.js"></script> 
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap.min.css') }}"> <script src="{{ url_for('static', filename='bootstrap.min.js') }}"></script> 
     <title>ASRE Dispatch</title>
 </head>
 <body>
-    <p>
-        <button hx-get="/dispatch" hx-trigger="click" hx-target="#main" hx-swap="inner-html">Dispatch</button>
-        <button hx-get="/createorder" hx-trigger="click" hx-target="#main" hx-swap="inner-html">New Order</button>
-        <button hx-get="/qbconnect" hx-trigger="click">QB Connect</button>
-    </p>
-    <main id="main">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">ASRE</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <button hx-get="/createorder" hx-trigger="click" hx-target="#main" hx-swap="inner-html">New Order</button>
+              </li>
+              <li class="nav-item">
+                <button hx-get="/dispatch" hx-trigger="click" hx-target="#main" hx-swap="inner-html">Dispatch</button>
+              </li>
+              <li>
+                <button hx-get="/qbconnect" hx-trigger="click">QB Connect</button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    <main id="main" class="container">
 
     </main>
 </body>
