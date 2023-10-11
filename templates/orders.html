@@ -1,121 +1,131 @@
-<div>
-    <h1>New Order</h1>
-        <form class="container">
-            <div class="row">
-                <label for="customer" class="form-label">Customer</label>
-                <select name="customer" class="form-select">
+<div class="container">
+    <h1 class="col-12">New Order</h1>
+    <form class="col-12 col-md-6" hx-post="/createorder">
+        <div class="row mb-3">
+            <div class="col-12">
+                <select name="customer" id="customer" class="form-select">
                     <option selected>Select Customer</option>
                     <option>+ Add Customer</option>
                 </select>
             </div>
-            <div class="row">
-                <label for="shipping" class="form-label">Shipping To</label>
-                <select type='select' name="shipping" class="form-select">
+        </div>
+        <div class="row mb-3">
+            <div class="col-12">
+                <select type='select' name="shipping" id="shipping" class="form-select">
                     <option selected>Select Shipping Address</option>
                     <option>+ Add Address</option>
                 </select>
             </div>
-            <div class="row">
-                <label for="contact" class="form-label">Contact</label>
-                <select name="contact" class="form-select">
-                    <option selected>Select Contact</option>
-                    <option>+ Add Contact</option>
+        </div>
+        <div class="row mb-3">
+            <div class="col-12">
+                <select name="contact" id="contact" class="form-select">
+                    <option selected>Select Site Contact</option>
+                    <option>+ Add Site Contact</option>
                 </select>
             </div>
-            <div class="row justify-content-center">
-                <div class="col-6">
-                    <label for="start-date" class="form-label">Start Date</label>
-                    <input type='date' name="start-date" class="form-control"></input>
-                </div>
-                <div class="col-6">
-                    <label for="end-date" class="form-label">End Date</label>
-                    <input type='date' name="end-date" class="form-control"></input>
-                </div>
+        </div>
+        <div class="row mb-3 justify-content-center">
+            <div class="col-6">
+                <label for="start-date" class="form-label">Start Date</label>
+                <input type='date' name="start-date" id="start-date" class="form-control">
             </div>
-            <div class="row">
-                <label for="equipment-type" class="form-label">Equipment Type</label>
-                <select name="equipment-type" class="form-select">
+            <div class="col-6">
+                <label for="end-date" class="form-label">End Date</label>
+                <input type='date' name="end-date" id="end-date" class="form-control">
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-12">
+                <select name="equipment-type" id="equipment-type" class="form-select">
                     <option selected>Equipment Type</option>
                 </select>
             </div>
-            <div class="row g-1">
-                <div class="col">
-                    <label for="day-rate" class="form-label">Day</label>
-                    <input placeholder='Day' name="day-rate"  class="form-control" required></input>
-                </div>
-                <div class="col">
-                    <label for="day-rate" class="form-label">Week</label>
-                    <input placeholder='Week' name="week-rate"  class="form-control" required></input>
-                </div>
-                <div class="col">
-                    <label for="day-rate" class="form-label">4 Week</label>
-                    <input placeholder='4 Week' name="4week-rate"  class="form-control" required></input>
-                </div>
-                <button type="button" class="btn text-end">+ Add Another Unit</button>
+        </div>
+        <div class="row g-1 mb-3">
+            <div class="col">
+                <label for="day-rate" class="form-label">Day</label>
+                <input placeholder='Day' name="day-rate" id="day-rate" class="form-control" required>
             </div>
-            <div class="row">
-                <div class="col">
-                    <label for="trucking-delivery" class="form-label">Delivery</label>
-                    <div class="input-group">
-                        <span class="input-group-text">$</span>
-                        <input for="trucking-delivery" type='text' placeholder='Delivery' class="form-control"></input>
-                    </div>
-                </div>
-                <div class="col">
-                    <label for="trucking-return" class="form-label">Return</label>
-                    <div class="input-group">
-                        <span class="input-group-text">$</span>
-                        <input for="trucking-return" type='text' placeholder='Return' class="form-control"></input>
-                    </div>
+            <div class="col">
+                <label for="week-rate" class="form-label">Week</label>
+                <input placeholder='Week' name="week-rate" id="week-rate" class="form-control" required>
+            </div>
+            <div class="col">
+                <label for="4week-rate" class="form-label">4 Week</label>
+                <input placeholder='4 Week' name="4week-rate" id="4week-rate" class="form-control" required>
+            </div>
+            <button type="button" class="btn text-end" onclick="">+ Add Another Unit</button>
+        </div>
+        <div class="row mb-3">
+            <div class="col">
+                <label for="trucking-delivery" class="form-label">Delivery</label>
+                <div class="input-group">
+                    <span class="input-group-text">$</span>
+                    <input for="trucking-delivery" type='text' id="trucking-delivery" placeholder='Delivery' class="form-control">
                 </div>
             </div>
-            <div class="row">
-                <div class="accordian">
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            <strong>Options</strong>
-                          </button>
-                        </h2>
-                        <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                          <div class="accordion-body row">
-                            <div class="col-6">
-                                <label for="environmental" class="form-label">Env Fee</label>
-                                <div class="input-group">
-                                    <span class="input-group-text">$</span>
-                                    <input type='text' placeholder='Env Fee' name="environmental" class="form-control"></input>
-                                </div>
+            <div class="col">
+                <label for="trucking-return" class="form-label">Return</label>
+                <div class="input-group">
+                    <span class="input-group-text">$</span>
+                    <input for="trucking-return" type='text' id="trucking-return" placeholder='Return' class="form-control">
+                </div>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="accordian">
+                <div class="accordion-item">
+                    <h2 class="accordion-header mb-3">
+                        <button class="accordion-button text-align-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        <strong>Extras</strong>
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <div class="accordion-body row">
+                        <div class="col-6 mb-3">
+                            <label for="environmental" class="form-label">Env Fee</label>
+                            <div class="input-group">
+                                <span class="input-group-text">$</span>
+                                <input type='text' placeholder='Env Fee' name="environmental" id="environmental" class="form-control">
                             </div>
-                            <div class="col-6">
-                                <label for="fuel" class="form-label">Fuel</label>
-                                <div class="input-group">
-                                    <span class="input-group-text">$</span>
-                                    <input name="fuel" type='text' placeholder='Fuel' class="form-control"></input>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <label for="other" class="form-label">Other</label>
-                                <div class="input-group">
-                                    <span class="input-group-text">$</span>
-                                    <input name="other" type='text' placeholder='Other' class="form-control"></input>
-                                </div>
-                            </div>
-                            <div>
-                                <input type='checkbox' name='damage-waiver'></input>
-                                <label for='damage-waiver' class="form-label">Damage Waiver 15%</label>
-                            </div>
-                            <div>
-                                <input type='checkbox' name='tax-exempt'></input>
-                                <label for='tax-exempt' class="form-label">Tax Exempt</label>
-                            </div>
-                          </div>
                         </div>
-                </div>
-                
+                        <div class="col-6 mb-3">
+                            <label for="fuel" class="form-label">Fuel</label>
+                            <div class="input-group">
+                                <span class="input-group-text">$</span>
+                                <input name="fuel" type='text' placeholder='Fuel' id="fuel" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-6 mb-3">
+                            <label for="other" class="form-label">Other</label>
+                            <div class="input-group">
+                                <span class="input-group-text">$</span>
+                                <input name="other" type='text' placeholder='Other' id="other" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <input type='checkbox' name='damage-waiver' id="damage-waiver">
+                            <label for='damage-waiver' class="form-label">Damage Waiver 15%</label>
+                        </div>
+                        <div>
+                            <input type='checkbox' name='tax-exempt' id="tax-exempt">
+                            <label for='tax-exempt' class="form-label">Tax Exempt</label>
+                        </div>
+                        </div>
+                    </div>
+                </div>        
             </div>
-            <div class="row">
-                <input type='textarea' placeholder='Delivery Instructions'></input>
+        </div>
+        <div class="row mb-3 align-items-center">
+            <div class="col-12">
+                <input type='textarea' placeholder='Delivery Instructions' id="delivery-instruction" class="form-control">
             </div>
-                <button type="submit">Submit</button>
-        </form>
+        </div>
+        <div class="row">
+            <div class="d-grid gap-2 align-items-center">
+                <button type="submit" class="btn btn-success"><strong>SUBMIT</strong></button>
+            </div>
+        </div>
+    </form>
 </div>

@@ -4,8 +4,8 @@ import requests
 from intuitlib.client import AuthClient
 from intuitlib.enums import Scopes
 from intuitlib.exceptions import AuthClientError
-import os
 from dotenv import dotenv_values
+
 app = Flask(__name__)
 
 config = dotenv_values(".env")
@@ -14,17 +14,25 @@ config = dotenv_values(".env")
 def index():
     return render_template('index.html')
 
-@app.route('/signin')
-def signIn():
+@app.route('/register')
+def register():
     return None
 
-@app.route('/signout')
-def signOut():
+@app.route('/login')
+def logIn():
+    return None
+
+@app.route('/logout')
+def logOut():
     return None
 
 @app.route('/dispatch')
 def dispatch():
     return render_template('dispatch.html')
+
+@app.route('/deliveries')
+def deliveries():
+    return render_template('deliveries.html')
 
 @app.route('/createorder', methods=['GET', 'POST'])
 def orders():

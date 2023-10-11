@@ -1,11 +1,14 @@
-<div class="reservations">
-    <div class="pending-assignment">
-        <h2>Pending Assignment</h2>
-    </div>
-    <div class="pending-pickups">
-        <h2>Pending Pickups</h2>
-    </div>
-    <div class="map" id="map" style="height: 800px; width: 800px;">
+<div id="reservations" class="container">
+    <div class="row">
+        <div class="col-4">
+            <div class="pending-assignment">
+                <h2>Pending Assignments</h2>
+            </div>
+            <div class="pending-pickups">
+                <h2>Pending Pickups</h2>
+            </div>
+        </div>
+    <div class="col-4" id="map" style="height: 800px;">
         <script>
         let map;
         function initMap() {
@@ -19,11 +22,17 @@
         }
         </script>
     </div>
-    <div class="pending-delivery">
-        <h2>Delivery Schedule</h2>
+    <div class="col-4">
+        <div class="pending-delivery">
+            <h2>Delivery Schedule</h2>
+        </div>
+        <div class="on-rent">
+            <h2>On Rent</h2>
+        </div>
+        <div class="available">
+            <h2>Available Units</h2>
+        </div>
     </div>
-    <div class="on-rent">
-        <h2>On Rent</h2>
     </div>
 </div>
 
